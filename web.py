@@ -2,13 +2,15 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import tratandodados
+import desativa
 
-df_dados = pd.read_csv('dados.csv')
+df_dados = desativa.desativa()
 df_dados['MES'] = pd.to_numeric(df_dados['MES'])
 df_dados2 = df_dados.sort_values(by=['MES'], ascending=False)
 lista_mes = list(df_dados2['MES'].unique()) #mes de acordo com o enviorecebido de sacolas
 
-df_os = pd.read_csv('dados_os.csv')
+#df_os = pd.read_csv('dados_os.csv')
+df_os = desativa.desativa_os()
 df_os['MES'] = pd.to_numeric(df_os['MES'])
 df_os2 = df_os.sort_values(by=['MES'], ascending=False)
 lista_mes2 = list(df_os2['MES'].unique()) #mes de acordo com as datas das os
@@ -28,6 +30,7 @@ with col1:
 df_marca = df_os[df_os['MARCA'] == opcao].copy()
 df_marca['text'] = df_marca['MARCA'] + " " + df_marca['TAMANHO'] + " " + df_marca['COR'] + " || " + df_marca['OS']
 df_marca2 = df_marca[['COLADOR','MES','DIA','ANO','OS','MARCA','TAMANHO','COR','QUANTIDADE','STATUS','PAGO','text']]
+#lista_os = desativa.os_de()
 lista_os = list(df_marca2['OS'].unique())
 
 with col2:
