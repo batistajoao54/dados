@@ -58,7 +58,7 @@ for i in opcao2:
     #st.write(df)
     #st.write(f'sacolas {df.iloc[0,11]}')
 
-st.write("ÚLTIMA ATUALIZAÇÃO: 25-11-2022")
+st.write("ÚLTIMA ATUALIZAÇÃO: 29-11-2022")
 #st.write(lista_os)
 
 
