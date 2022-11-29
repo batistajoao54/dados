@@ -11,11 +11,10 @@ lista_mes = list(df_dados2['MES'].unique()) #mes de acordo com o enviorecebido d
 
 #df_os = pd.read_csv('dados_os.csv')
 df_os = desativa.desativa_os()
-df_os['MES'] = pd.to_numeric(df_os['MES'])
-df_os2 = df_os.sort_values(by=['MES'], ascending=False)
-lista_mes2 = list(df_os2['MES'].unique()) #mes de acordo com as datas das os
-lista_marca = list(df_dados2["MARCA"].unique()) #selecionando as marcas
-
+#df_os['MES'] = pd.to_numeric(df_os['MES'])  #por enquanto pode ser tirado esses tres comandos
+#df_os2 = df_os.sort_values(by=['MES'], ascending=False)
+#lista_mes2 = list(df_os2['MES'].unique()) #mes de acordo com as datas das os
+lista_marca = list(df_os["MARCA"].unique()) #selecionando as marcas
 
 
 st.set_page_config(layout= 'wide')
